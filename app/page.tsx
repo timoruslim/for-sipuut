@@ -7,15 +7,15 @@ export default function Home() {
   const router = useRouter();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
+    <main className="flex h-screen w-screen flex-col items-center justify-center p-24">
       <header>
         <h1 className="text-4xl font-bold">Haii sipuut :D</h1>
       </header>
       <section className="mt-10 flex flex-col items-center">
-        <div className="flex gap-5">
-          <Image src="/yey.gif" width={450} height={0} alt=""></Image>
-          <Image src="/pic1.jpg" width={300} height={0} alt=""></Image>
-          <Image src="/smile.gif" width={450} height={0} alt=""></Image>
+        <div className="flex gap-5 items-center">
+          <Image src="/yey.gif" width={300} height={0} alt=""></Image>
+          <Image src="/pic1.jpg" width={200} height={0} alt=""></Image>
+          <Image src="/smile.gif" width={300} height={0} alt=""></Image>
         </div>
         <p className="mt-5">so pro slesai uas😎😎😎</p>
         <button

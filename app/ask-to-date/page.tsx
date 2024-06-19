@@ -7,21 +7,24 @@ import { useState } from "react";
 export default function Home() {
   const router = useRouter();
   const [coords, setCoords] = useState({
-    x: 55.655,
-    y: 83.753,
+    x: 0,
+    y: 0,
   });
 
   function preventDateRejectionMuahaha() {
-    console.log("test");
+    let maxWidth = window.innerWidth - 200;
+    let maxHeight = window.innerHeight - 120;
+    console.log(maxWidth);
+    console.log(maxHeight);
     setCoords({
       ...coords,
-      x: Math.random() * 100,
-      y: Math.random() * 100,
+      x: Math.floor((Math.random() - 0.55) * maxWidth),
+      y: Math.floor((Math.random() - 0.85) * maxHeight),
     });
   }
 
   return (
-    <div>
+    <div className="w-screen h-screen">
       <main className="flex min-h-screen flex-col items-center justify-center p-24">
         <header className="flex items-center justify-center gap-5">
           <h1 className="text-4xl font-bold">
@@ -44,33 +47,25 @@ export default function Home() {
               <p className="mt-3">we pleeii kyk bocil so dum</p>
             </div>
           </div>
-          <div className="flex gap-5">
+          <div className="flex flex-row gap-5">
             <button
-              className="px-10 py-2 bg-pink-text mt-10 text-xl font-bold rounded-xl border-0 hover:bg-pink-hover hover:scale-110 mr-300"
+              className="px-10 py-2 bg-pink-text mt-10 text-xl font-bold rounded-xl border-0 hover:bg-pink-hover hover:scale-110"
               onClick={() => router.push("/date-accepted")}
             >
               MAAUUU!!
             </button>
             <button
-              className="px-10 py-2 bg-black mt-10 text-xl rounded-xl opacity-0 pointer-events-none"
+              className="px-10 py-2 bg-pink-text mt-10 text-xl font-bold rounded-xl border-0"
+              style={{
+                transform: "translate(" + coords.x + "px, " + coords.y + "px)",
+              }}
               onMouseEnter={() => preventDateRejectionMuahaha()}
             >
-              males😔😔
+              males😔
             </button>
           </div>
         </section>
       </main>
-      <button
-        className={`px-10 py-2 bg-pink-text text-xl rounded-xl absolute`}
-        style={{
-          top: coords.y + "%",
-          left: coords.x + "%",
-          transform: "translate(-" + coords.x + "%, -" + coords.y + "%)",
-        }}
-        onMouseEnter={() => preventDateRejectionMuahaha()}
-      >
-        males😔😔
-      </button>
     </div>
   );
 }
