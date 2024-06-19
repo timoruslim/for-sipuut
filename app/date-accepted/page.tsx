@@ -12,7 +12,7 @@ export default function Home() {
           <Image src="/pic2.jpg" width={300} height={0} alt=""></Image>
           <Image src="/dance.gif" width={400} height={0} alt=""></Image>
         </div>
-        <p className="mt-5">see u rabuu😌😌😌</p>
+        <p className="mt-5">see u selasaaa😌😌😌</p>
       </section>
     </main>
   );
